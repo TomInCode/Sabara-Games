@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif; /* Fonte Poppins */
+  background-color: #191919; /* Fundo escuro */
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  margin-top: -20px; /* Ajuste negativo para mover a logo para cima */
+}
+
+.logo {
+  font-size: 36px;
+  color: white; /* Cor do título */
+  margin-bottom: 0; /* Remove o espaçamento abaixo da logo */
+}
+
+.games {
+  display: flex;
+  justify-content: center; /* Centraliza os jogos na horizontal */
+  margin-top: 20px; /* Ajuste para posicionar os jogos mais abaixo */
+}
+
+.game {
+  position: relative;
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: 0 20px; /* Espaçamento entre os jogos */
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 0.3s;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5); /* Sombra suave */
+}
+
+.game:hover {
+  transform: scale(1.1);
+}
+
+.game img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.game-title {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: opacity 0.3s;
+  opacity: 0; /* Título inicialmente invisível */
+}
+
+.game:hover .game-title {
+  opacity: 1; /* Torna o título visível ao passar o mouse */
+}
+
+@media only screen and (max-width: 600px) {
+  .games {
+    flex-direction: column; /* Altera a direção para uma coluna em telas menores */
+    align-items: center; /* Centraliza os jogos na vertical */
+  }
+
+  .game {
+    width: 150px;
+    height: 150px;
+    margin: 10px 0; /* Espaçamento entre os jogos */
+  }
+}
